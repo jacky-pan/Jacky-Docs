@@ -1,0 +1,9 @@
+Welcome!
+========
+
+Lorem ipsum.
+
+.. toctree::
+
+   first
+   second
