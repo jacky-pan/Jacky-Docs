@@ -3,12 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-引言
+Welcome to Jacky Docs.
 ======================================
 
 .. toctree::
-   :maxdepth: 3
+   :numbered: 5
+   :maxdepth: 6
 
-   1.引言
-   2.基础教程
-   3.进阶指南
+   Introduction/intro
+   Basic/index
+   Advanced/index
+   glossary/glossary
+
+   Indices and tables
+==================
+
+* :ref:`genindex`
+.. * :ref:`modindex`
+* :ref:`search`
