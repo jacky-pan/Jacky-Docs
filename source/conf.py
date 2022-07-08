@@ -56,18 +56,18 @@ exclude_patterns = []
 #
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 extensions = [
-    'sphinx.ext.duration',
     'sphinx.ext.doctest',
+    'sphinx.ext.duration',
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+#    'sphinx.ext.autosummary',
+#    'sphinx.ext.intersphinx',
     'recommonmark',
     'sphinx_markdown_tables',
 ]
