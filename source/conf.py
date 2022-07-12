@@ -71,3 +71,4 @@ extensions = [
     'recommonmark',
     'sphinx_markdown_tables',
 ]
+html_sidebars = { '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html']}

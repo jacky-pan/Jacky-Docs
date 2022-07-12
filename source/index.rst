@@ -4,20 +4,11 @@
    contain the root `toctree` directive.
 
 Welcome to Jacky Docs.
-======================================
+=========================
 
 .. toctree::
-   :numbered: 5
-   :maxdepth: 6
+   :maxdepth: 3
 
-   Introduction/intro
    Basic/index
    Advanced/index
    glossary/glossary
-
-   Indices and tables
-==================
-
-* :ref:`genindex`
-.. * :ref:`modindex`
-* :ref:`search`

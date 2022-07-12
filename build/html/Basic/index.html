@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. 基础教程 &mdash; Jacky Docs 1.0 文档</title>
+  <title>reStructuredText语法 &mdash; Jacky Docs 1.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="2.1. 文档制作简介" href="intro.html" />
-    <link rel="prev" title="1. 引言" href="../Introduction/intro.html" /> 
+    <link rel="next" title="进阶指南" href="../Advanced/index.html" />
+    <link rel="prev" title="Welcome to Jacky Docs." href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,13 +40,26 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Introduction/intro.html">1. 引言</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. 基础教程</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html">2.1. 文档制作简介</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">reStructuredText语法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1. 章节</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2. 段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3. 行内标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4. 列表和引用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">列表嵌套</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">定义列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">引用引文</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Advanced/index.html">3. 进阶指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary/glossary.html">4. 名词术语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">1. 代码或文字块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">6. 超链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">7. 图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">8. 表格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">9. 引用</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Advanced/index.html">进阶指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/glossary.html">名词术语</a></li>
 </ul>
 
         </div>
@@ -63,7 +76,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">2. </span>基础教程</li>
+      <li>reStructuredText语法</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Basic/index.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -73,27 +86,290 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="partbasic">
-<span id="id1"></span><h1><span class="section-number">2. </span>基础教程<a class="headerlink" href="#partbasic" title="Permalink to this heading"></a></h1>
-<div class="toctree-wrapper compound">
+  <section id="restructuredtext">
+<h1>reStructuredText语法<a class="headerlink" href="#restructuredtext" title="Permalink to this heading"></a></h1>
+<section id="id1">
+<h2>1. 章节<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">2.1. 文档制作简介</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id2">2.1.1. 标记语言简介</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="intro.html#markdown">2.1.1.1. Markdown标记语言</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<li><p>章节标题,可在章节标题上一行或上下两行添加标点符号,且标点符号长度至少和章节标题等长</p></li>
+<li><p>Sphinx没有专门指定标题级别,以连续性确定标题,可参照pthon文档惯例如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="s2">&quot;#&quot;</span><span class="n">用于部分</span> <span class="n">Part</span>
+<span class="o">*</span> <span class="s2">&quot;*&quot;</span><span class="n">用于章</span> <span class="n">Chapter</span>
+<span class="o">*</span> <span class="s2">&quot;=&quot;</span><span class="n">用于节</span> <span class="n">Section</span>
+<span class="o">*</span> <span class="s2">&quot;-&quot;</span><span class="n">用于小节</span> <span class="n">Subsections</span>
+<span class="o">*</span> <span class="s2">&quot;^&quot;</span><span class="n">用于子小节</span> <span class="n">Subsubsections</span>
+<span class="o">*</span> <span class="s1">&#39;&#39;</span> <span class="n">用于段</span> <span class="n">Paragranphs</span>
+</pre></div>
 </div>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>2. 段落<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>段落是reST文档中最基本的组成部分,段落即文字描述,段落间可以有空行.和Pthon语法一样,reST缩进很重要,同一段多个文本行必须缩进一致.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><strong>换行</strong> :reST段落内换行不会在html中生成换行符,文本编辑器中段落内换行需要在前加”|”和空格;
+如段内文体太长,强制更换需要用 <strong>“\”</strong> 符号,否则生成html会在行末下一行首之前插入一个空格.</p>
+</div>
+</section>
+<section id="id3">
+<h2>3. 行内标记<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>行内标记通常以下几种:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* *一个星号* 表示强调(斜体)
+* **两个星号** 表示强调(粗体)
+* ``代码样
+* 例`` 表示引用代码样例
+* 功能限制:
+* 不能嵌套使用
+* 标记内文本不能以空格开始
+* 行内标记号外只能是费文字字符,空格需要转义this\ *one*\ word
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>段内文本中”*”号或者”`”可能被识别成行内标记分隔符,添加”\”即可.</p>
+</div>
+<ul class="simple">
+<li><p>样例</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><em>*文本* 表示强调(斜体)</em></div>
+<div class="line"><strong>**文本** 表示强调(粗体)</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">``代码``表示引用代码样例</span></code></div>
+</div>
+</section>
+<section id="id4">
+<h2>4. 列表和引用<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<section id="id5">
+<h3>列表<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>列表标记最常用,常在段落开头放一个”*”和一个缩进,编号列表及”#”加上”.”也发也是可以实现自动加序:</p></li>
+</ul>
+<p>“*”样例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">item</span>
+</pre></div>
+</div>
+<p>num样例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">item1</span>
+<span class="mf">2.</span> <span class="n">item2</span>
+<span class="mf">3.</span> <span class="n">item3</span>
+</pre></div>
+</div>
+<p>“#”样例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#. item4</span>
+<span class="c1">#. item5</span>
+<span class="c1">#. item6</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>列表嵌套<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>列表可以嵌套,但二级列表需要和一级列表以空行分隔</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>一级列表(一)</p>
+<ol class="arabic simple">
+<li><p>二级列表(一)</p></li>
+<li><p>二级列表(二)</p>
+<ol class="arabic simple">
+<li><p>三级列表</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>一级列表(二)</p></li>
+</ol>
+</section>
+<section id="id7">
+<h3>定义列表<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>不使用列表标记定义段落,使用缩进创建列表</p></li>
+</ul>
+<p>item1</p>
+<blockquote>
+<div><p>subitem1</p>
+<p>subitem2</p>
+</div></blockquote>
+<p>item2</p>
+<blockquote>
+<div><p>subitem1</p>
+<p>subitem2</p>
+</div></blockquote>
+</section>
+<section id="id8">
+<h3>引用引文<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<p>Lorem ipsum <a class="reference internal" href="#ref" id="id9"><span>[Ref]</span></a> dolor sit amet.</p>
+<dl class="citation">
+<dt class="label" id="ref"><span class="brackets"><a class="fn-backref" href="#id9">Ref</a></span></dt>
+<dd><p>参考文献, 书,URL 等.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="id10">
+<h2>1. 代码或文字块<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<p>文字块或代码通常使用”::”来标记引入,代码必须缩进(和段落类似,用空行隔开上下文):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">作为单独段落出现</span><span class="p">,</span> <span class="n">则盖段落完全从文档中删除</span>
+<span class="mf">2.</span> <span class="n">如前面有空格</span><span class="p">,</span><span class="n">则删除盖标记</span>
+<span class="mf">3.</span> <span class="n">如果前面非空格</span><span class="p">,</span><span class="n">则盖标记被单个冒号</span><span class="s2">&quot;:&quot;</span><span class="n">替换</span>
+<span class="mf">4.</span> <span class="s2">&quot;:code:&quot;</span><span class="n">用于行内代码</span>
+<span class="mf">5.</span> <span class="s2">&quot;::&quot;</span><span class="n">用于简单代码或文本块</span>
+<span class="mf">6.</span> <span class="s2">&quot;:code-block:&quot;</span><span class="n">用于标注语句</span><span class="p">,</span><span class="n">有列出行号和高亮等效果</span>
+<span class="c1"># &quot;#&quot;可用于代码或文字块注释工作或备注工作</span>
+</pre></div>
+</div>
+<p>这是一段文本示例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">It</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">processed</span> <span class="ow">in</span> <span class="nb">any</span> <span class="n">way</span><span class="p">,</span> <span class="k">except</span>
+<span class="n">that</span> <span class="n">the</span> <span class="n">indentation</span> <span class="ow">is</span> <span class="n">removed</span><span class="o">.</span>
+
+<span class="n">It</span> <span class="n">can</span> <span class="n">span</span> <span class="n">multiple</span> <span class="n">lines</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2>6. 超链接<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<p>两种链接:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* 行内超链接,语法:`链接文字&lt;URL&gt;`_
+* 分开超链接,一般用于`链接文字`,定义链接的地方 ..链接文字:URL
+* 一定需要添加http://或https://前缀, 不要直接从网址开始写
+</pre></div>
+</div>
+<p>超链接样例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>参考网站 `百度 &lt;http://www.baidu.com&gt;`_
+
+参考网站 `谷歌 URL`_
+
+.. _谷歌 URL: https://www.google.com
+</pre></div>
+</div>
+<p>超链接效果:</p>
+<p>参考网站 <a class="reference external" href="https://www.baidu.com">百度</a></p>
+<p>参考网站 <a class="reference external" href="https://www.google.com">谷歌 URL</a></p>
+</section>
+<section id="id13">
+<h2>7. 图片<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h2>
+<p>链接图片语法:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">path</span><span class="p">(</span><span class="n">img</span><span class="o">/</span><span class="n">google</span><span class="o">.</span><span class="n">png</span><span class="p">)</span>
+     <span class="p">:</span><span class="n">width</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+     <span class="c1"># 图片展示:width在650-700px效果较好</span>
+
+<span class="o">*</span> <span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">path</span><span class="p">(</span><span class="n">img</span><span class="o">/</span><span class="n">google</span><span class="o">.</span><span class="n">png</span><span class="p">)</span>
+     <span class="p">:</span><span class="n">width</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+     <span class="n">note</span><span class="p">(</span><span class="n">Google</span> <span class="n">Page</span><span class="p">)</span>
+     <span class="c1"># note为插入图片左下角注释</span>
+</pre></div>
+</div>
+<p>插入google图片效果:</p>
+<a class="reference internal image-reference" href="../_images/google.png"><img alt="../_images/google.png" src="../_images/google.png" style="width: 664px;" /></a>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="../_images/google.png"><img alt="../_images/google.png" src="../_images/google.png" style="width: 664px;" /></a>
+<figcaption>
+<p><span class="caption-text"><em>Google Page</em></span><a class="headerlink" href="#id16" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id14">
+<h2>8. 表格<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h2>
+<p>表格绘制规则如下(建议使用复制修改):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+<span class="n">A</span>      <span class="n">B</span>      <span class="n">A</span> <span class="ow">and</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">False</span>  <span class="kc">True</span>   <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">True</span>   <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+
+<span class="o">+------------------------+------------+----------+----------+</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">Header</span> <span class="mi">4</span> <span class="o">|</span>
+<span class="o">|</span> <span class="p">(</span><span class="n">header</span> <span class="n">rows</span> <span class="n">optional</span><span class="p">)</span> <span class="o">|</span>            <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>
+<span class="o">+========================+============+==========+==========+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">1</span><span class="p">,</span> <span class="n">column</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">column</span> <span class="mi">4</span> <span class="o">|</span>
+<span class="o">+------------------------+------------+----------+----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">2</span>             <span class="o">|</span> <span class="o">...</span>        <span class="o">|</span> <span class="o">...</span>      <span class="o">|</span>          <span class="o">|</span>
+<span class="o">+------------------------+------------+----------+----------+</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A and B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 21%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header row, column 1
+(header rows optional)</p></th>
+<th class="head"><p>Header 2</p></th>
+<th class="head"><p>Header 3</p></th>
+<th class="head"><p>Header 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>body row 1, column 1</p></td>
+<td><p>column 2</p></td>
+<td><p>column 3</p></td>
+<td><p>column 4</p></td>
+</tr>
+<tr class="row-odd"><td><p>body row 2</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id15">
+<h2>9. 引用<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h2>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Introduction/intro.html" class="btn btn-neutral float-left" title="1. 引言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="intro.html" class="btn btn-neutral float-right" title="2.1. 文档制作简介" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to Jacky Docs." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Advanced/index.html" class="btn btn-neutral float-right" title="进阶指南" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
